@@ -1,68 +1,60 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-  }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: restoli-light --default, restoli-dark --prefersdark;
+  exclude: join;
 }
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+@plugin "daisyui/theme" {
+  name: "restoli-light";
+  default: true;
+  color-scheme: light;
+  --color-base-100: #f2feff;
+  --color-base-200: #fff4e8;
+  --color-base-300: #ddcbc7;
+  --color-base-content: #3a3d45;
+  --color-primary: #f54e29;
+  --color-primary-content: #ffffff;
+  --color-secondary: #159a87;
+  --color-accent: #d29112;
+  --color-neutral: #d2d7ee;
+  --color-info: #72b8fe;
+  --color-success: #218a55;
+  --color-success-content: #fff4e8;
+  --color-warning: #bd7900;
+  --color-error: #ed0c1b;
+  --color-error-content: #fff4e8;
+  --radius-selector: 0.5rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+@plugin "daisyui/theme" {
+  name: "restoli-dark";
+  prefersdark: true;
+  color-scheme: dark;
+  --color-base-100: #202631;
+  --color-base-200: #191f29;
+  --color-base-300: #495263;
+  --color-base-content: #edf0f5;
+  --color-primary: #cf1103;
+  --color-primary-content: #fff0d5;
+  --color-secondary: #6bd1c0;
+  --color-accent: #efbd62;
+  --color-neutral: #394252;
+  --color-info: #2b628d;
+  --color-success: #6dc990;
+  --color-success-content: #495263;
+  --color-warning: #edc368;
+  --color-error: #ff535b;
+  --radius-selector: 0.5rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
 }

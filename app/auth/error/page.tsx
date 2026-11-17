@@ -1,51 +1,19 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Suspense } from "react";
+import Link from "next/link";
 
-async function ErrorContent({
-  searchParams,
-}: {
-  searchParams: Promise<{ error: string }>;
-}) {
-  const params = await searchParams;
-
+export default function AuthErrorPage() {
   return (
-    <>
-      {params?.error ? (
-        <p className="text-sm text-muted-foreground">
-          Code error: {params.error}
-        </p>
-      ) : (
-        <p className="text-sm text-muted-foreground">
-          An unspecified error occurred.
-        </p>
-      )}
-    </>
-  );
-}
-
-export default function Page({
-  searchParams,
-}: {
-  searchParams: Promise<{ error: string }>;
-}) {
-  return (
-    <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
-      <div className="w-full max-w-sm">
-        <div className="flex flex-col gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl">
-                Sorry, something went wrong.
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Suspense>
-                <ErrorContent searchParams={searchParams} />
-              </Suspense>
-            </CardContent>
-          </Card>
+    <main className="grid min-h-svh place-items-center bg-base-200 p-4 text-base-content">
+      <section className="card w-full max-w-lg border border-base-300 bg-base-100 shadow-xl">
+        <div className="card-body items-center gap-4 text-center">
+          <h1 className="card-title text-2xl">El enlace no es válido o ya venció</h1>
+          <p className="text-sm text-base-content/70">
+            Solicita a root que envíe una invitación nueva y abre el enlace desde el correo recibido.
+          </p>
+          <Link href="/" className="btn btn-primary mt-2">
+            Volver al inicio
+          </Link>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
